@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Závod na koni</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #dff6ff;
+      margin: 0;
+      padding: 20px;
+    }
+    #track {
+      width: 900px;
+      margin: 20px auto;
+      background: #8bc34a;
+      border: 3px solid #222;
+      padding: 20px;
+    }
+    .lane {
+      position: relative;
+      height: 80px;
+      margin: 20px 0;
+      background: #c58b45;
+      border: 2px solid #fff;
+    }
+    .horse {
+      position: absolute;
+      top: 20px;
+      font-size: 36px;
+      transition: left 0.1s linear;
+    }
+    .finish {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 10px;
+      height: 100%;
+      background: black;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🏇 Závod na koni</h1>
+  <p id="status">Čekání na hráče...</p>
+
+  <input id="name" placeholder="Tvoje jméno" />
+  <button id="save">Uložit jméno</button>
+  <button id="restart">Restart</button>
+
+  <p>Mačkej <b>mezerník</b> co nejrychleji</p>
+
+  <div id="track">
+    <div class="lane">
+      <div id="horse1" class="horse">🏇</div>
+      <div class="finish"></div>
+    </div>
+    <div class="lane">
+      <div id="horse2" class="horse">🏇</div>
+      <div class="finish"></div>
+    </div>
+  </div>
+
+  <div id="names"></div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
